@@ -11,7 +11,7 @@ const UserFormWithReducer: FC = () => {
 
   const styleColor = {  backgroundColor: "#7c9ea1"};
   
-  const updateUser = () => {
+  const updateUser = (): void => {
     if (refFormNameInput.current && refFormEmailInput.current) {
       const newUser = {
         name: refFormNameInput.current.value,
@@ -23,7 +23,7 @@ const UserFormWithReducer: FC = () => {
 
   return (
     <div className="UserForm" style={styleColor}>
-      <h1>State management using userReducer from react hook</h1>
+      <h2>Using userReducer from react hook</h2>
       <div id="form-container">
         <div id="user-form">
           <label>name:</label>

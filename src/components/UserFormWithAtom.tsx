@@ -11,7 +11,7 @@ const UserFormWithAtom: FC = () => {
 
     const styleColor = {  backgroundColor: "#7c9ecc"};
 
-    const updateUser = () => {
+    const updateUser = (): void => {
       if (refFormNameInput.current && refFormEmailInput.current) {
         const newUser = {
           name: refFormNameInput.current.value,
@@ -24,7 +24,7 @@ const UserFormWithAtom: FC = () => {
 
     return (
         <div className="UserFormWithAtom" style={styleColor}>
-          <h1>State management using useAtom from jotai</h1>
+          <h2>Using useAtom from jotai</h2>
           <div id="form-container-atom">
             <div id="user-form-atom">
               <label>name:</label>

@@ -1,7 +1,9 @@
-
 /**
  * For useReducer hook as state management
- */
+ * Although useState is a Basic Hook for managing simple state transformation and 
+ * useReducer is an Additional Hook for managing more complex state logic, it is 
+ * worth noting that useState uses the useReducer internally. 
+*/
 
 export type UserType = {
   name: string;
@@ -22,15 +24,16 @@ export enum ActionType {
  * involves multiple sub-values or when the next state depends on the previous one.
  * @param state 
  * @param action 
- * @returns 
+ * @returns newState
  */
 export const userReducer = (
   state: UserType = userInitialState,
   action: { type: ActionType; payload: any }
-) => {
+): UserType => {
   switch (action.type) {
     case ActionType.UPDATE_USER: {
-      return action.payload; //return new state
+      const newState: UserType = action.payload;
+      return newState; //return new state
     }
     default:
       return state;

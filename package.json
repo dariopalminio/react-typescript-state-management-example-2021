@@ -25,8 +25,29 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+
+      "no-console": "warn",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": false
+        }
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+        "warn",
+        {
+          "allowExpressions": true
+        }
+      ],
+      "sonarjs/cognitive-complexity": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -41,6 +62,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0",
     "jotai": "^0.16.4"
   }
 }
