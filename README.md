@@ -1,5 +1,4 @@
 
-
 # Creating from zero
 
 npx create-react-app react-typescript-state-management-example --template typescript
