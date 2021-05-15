@@ -1,0 +1,43 @@
+import React, { FC, useReducer } from "react";
+import { userReducer, userInitialState, ActionType } from "../states/userReducer";
+
+
+const UserFormWithReducer: FC = () => {
+ 
+  const [userState, dispatch] = useReducer(userReducer, userInitialState);
+
+  let refFormNameInput = React.createRef<HTMLInputElement>();
+  let refFormEmailInput = React.createRef<HTMLInputElement>();
+
+  const styleColor = {  backgroundColor: "#7c9ea1"};
+  
+  const updateUser = () => {
+    if (refFormNameInput.current && refFormEmailInput.current) {
+      const newUser = {
+        name: refFormNameInput.current.value,
+        email: refFormEmailInput.current.value,
+      };
+      dispatch({ type: ActionType.UPDATE_USER, payload: newUser });
+    }
+  };
+
+  return (
+    <div className="UserForm" style={styleColor}>
+      <h1>State management using userReducer from react hook</h1>
+      <div id="form-container">
+        <div id="user-form">
+          <label>name:</label>
+          <input ref={refFormNameInput} id="form-name-input"></input>
+        </div>
+        <div>
+          <label>email:</label>
+          <input ref={refFormEmailInput} id="form-name-email"></input>
+        </div>
+        <button onClick={() => updateUser()}>Update user</button>
+      </div>
+      <div>{` User name: ${userState.name} Email: ${userState.email}`}</div>
+    </div>
+  );
+};
+
+export default UserFormWithReducer;
