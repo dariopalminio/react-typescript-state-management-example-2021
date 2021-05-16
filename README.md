@@ -3,7 +3,11 @@
 
 npx create-react-app react-typescript-state-management-example --template typescript
 
-npm i jotai --save-dev
+npm install --save-dev jotai
+
+npm install --save-dev @testing-library/react-hooks
+
+npm install --save-dev react-test-renderer
 
 # Getting Started with Create React App
 

@@ -27,7 +27,7 @@ const UserFormWithReducer: FC = () => {
       <div id="form-container">
         <div id="user-form">
           <label>name:</label>
-          <input ref={refFormNameInput} id="form-name-input"></input>
+          <input className="input-test" ref={refFormNameInput} id="form-name-input-reducer" aria-label="form-name-input-reducer"></input>
         </div>
         <div>
           <label>email:</label>
