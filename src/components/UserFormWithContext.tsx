@@ -1,8 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useContext } from "react";
+import StaticContext from "../states/context/StaticContext";
 
-const UserFormWithUseState: FC = () => {
-  const [user, setUser] = useState("");
-  const [email, setEmail] = useState("");
+const UserFormWithContext: FC = () => {
+  const staticContext = useContext(StaticContext);
+  const [user, setUser] = useState(staticContext.initialName);
+  const [email, setEmail] = useState(staticContext.initialEmail);
 
   let refFormNameInput = React.createRef<HTMLInputElement>();
   let refFormEmailInput = React.createRef<HTMLInputElement>();
@@ -19,26 +21,24 @@ const UserFormWithUseState: FC = () => {
   };
 
   return (
-    <div className="UserFormWithUseState" style={styleColor}>
-      <h2>Using useState</h2>
+    <div className="UserFormWithContext" style={styleColor}>
+      <h2>Using useContext</h2>
       <p>
-        The useState is a Hook (function) that allows you to have state
-        variables in functional components. Use useState for store values
-        whenever you manage a JS primitive (i.e. a string, integer, or boolean).
+       
       </p>
-      <div id="form-container-useState">
-        <div id="user-form-useState">
+      <div id="form-container-useContext">
+        <div id="user-form-useContext">
           <label>name:</label>
           <input
-            className="input-test-useState"
+            className="input-test-useContext"
             ref={refFormNameInput}
-            id="form-name-input-useState"
+            id="form-name-input-useContext"
             aria-label="form-name-input-reducer"
           ></input>
         </div>
         <div>
           <label>email:</label>
-          <input ref={refFormEmailInput} id="form-name-email-useState"></input>
+          <input ref={refFormEmailInput} id="form-name-email-useContext"></input>
         </div>
         <button onClick={() => updateUser()}>Update user</button>
       </div>
@@ -47,4 +47,4 @@ const UserFormWithUseState: FC = () => {
   );
 };
 
-export default UserFormWithUseState;
+export default UserFormWithContext;

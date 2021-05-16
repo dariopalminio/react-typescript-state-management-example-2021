@@ -20,7 +20,7 @@ const UserFormWithCustomHook: FC = () => {
   };
 
   return (
-    <div className="UserForm" style={styleColor}>
+    <div className="UserFormWithCustomHook" style={styleColor}>
       <h2>Using Custom Hook from react</h2>
       <div id="form-container-hook">
         <div id="user-form-hook">
