@@ -5,6 +5,7 @@
  * worth noting that useState uses the useReducer internally. 
 */
 
+// type for user state
 export type UserType = {
   name: string;
   email: string;
@@ -15,6 +16,7 @@ export const userInitialState: UserType = {
   email: ""
 };
 
+// Actions
 export enum ActionType {
   UPDATE_USER = "UPDATE_USER",
 }
