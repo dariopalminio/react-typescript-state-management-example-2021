@@ -13,7 +13,7 @@ const UserFormWithReducer: FC = () => {
 
   const styleColor = { backgroundColor: "#7c9ea1" };
 
-  const updateUser = (): void => {
+  const onClickHandler = (): void => {
     if (refFormNameInput.current && refFormEmailInput.current) {
       const newUser = {
         name: refFormNameInput.current.value,
@@ -25,7 +25,7 @@ const UserFormWithReducer: FC = () => {
 
   return (
     <div className="UserForm" style={styleColor}>
-      <h2>Using userReducer from react hook</h2>
+      <h2>Using useReducer</h2>
       <p>
         If you move past managing a single primitive (i.e. a string, integer, or
         boolean) and instead must manage a complex object (e.g. with objects,
@@ -52,7 +52,7 @@ const UserFormWithReducer: FC = () => {
           <label>email:</label>
           <input ref={refFormEmailInput} id="form-name-email"></input>
         </div>
-        <button onClick={() => updateUser()}>Update user</button>
+        <button onClick={() => onClickHandler()}>Update user</button>
       </div>
       <div>{` User name: ${userState.name} Email: ${userState.email}`}</div>
     </div>

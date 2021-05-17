@@ -1,22 +1,29 @@
-import React, { FC, useState, useContext } from "react";
-import StaticContext from "../states/context/StaticContext";
+import React, { FC } from "react";
+import {
+  GlobalContextType,
+  GlobalContext,
+  UserStateType,
+} from "../states/context/GlobalContext";
 
 const UserFormWithContext: FC = () => {
-  const staticContext = useContext(StaticContext);
-  const [user, setUser] = useState(staticContext.initialName);
-  const [email, setEmail] = useState(staticContext.initialEmail);
+  //Using global context as consumers
+  const { user, updateUser } = React.useContext(
+    GlobalContext
+  ) as GlobalContextType;
 
   let refFormNameInput = React.createRef<HTMLInputElement>();
   let refFormEmailInput = React.createRef<HTMLInputElement>();
 
-  const styleColor = { backgroundColor: "#7c78a1" };
+  const styleColor = { backgroundColor: "#5668a1" };
 
-  const updateUser = (): void => {
-    if (refFormNameInput.current) {
-      setUser(refFormNameInput.current.value);
-    }
-    if (refFormEmailInput.current) {
-      setEmail(refFormEmailInput.current.value);
+  const onClickHandler = (): void => {
+    if (refFormNameInput.current && refFormEmailInput.current) {
+      const newUser: UserStateType = {
+        name: refFormNameInput.current.value,
+        email: refFormEmailInput.current.value,
+      };
+      //Update in global context
+      updateUser(newUser);
     }
   };
 
@@ -24,7 +31,9 @@ const UserFormWithContext: FC = () => {
     <div className="UserFormWithContext" style={styleColor}>
       <h2>Using useContext</h2>
       <p>
-       
+        Context is designed to share data that can be considered “global” for a
+        tree of React components, such as the current authenticated user, theme,
+        or preferred language.
       </p>
       <div id="form-container-useContext">
         <div id="user-form-useContext">
@@ -38,11 +47,14 @@ const UserFormWithContext: FC = () => {
         </div>
         <div>
           <label>email:</label>
-          <input ref={refFormEmailInput} id="form-name-email-useContext"></input>
+          <input
+            ref={refFormEmailInput}
+            id="form-name-email-useContext"
+          ></input>
         </div>
-        <button onClick={() => updateUser()}>Update user</button>
+        <button onClick={() => onClickHandler()}>Update user</button>
       </div>
-      <div>{` User name: ${user} Email: ${email}`}</div>
+      <div>{` User name: ${user.name} Email: ${user.email}`}</div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const UserFormWithUseState: FC = () => {
 
   const styleColor = { backgroundColor: "#7c78a1" };
 
-  const updateUser = (): void => {
+  const onClickHandler = (): void => {
     if (refFormNameInput.current) {
       setUser(refFormNameInput.current.value);
     }
@@ -17,6 +17,7 @@ const UserFormWithUseState: FC = () => {
       setEmail(refFormEmailInput.current.value);
     }
   };
+
 
   return (
     <div className="UserFormWithUseState" style={styleColor}>
@@ -40,7 +41,7 @@ const UserFormWithUseState: FC = () => {
           <label>email:</label>
           <input ref={refFormEmailInput} id="form-name-email-useState"></input>
         </div>
-        <button onClick={() => updateUser()}>Update user</button>
+        <button onClick={() => onClickHandler()}>Update user</button>
       </div>
       <div>{` User name: ${user} Email: ${email}`}</div>
     </div>

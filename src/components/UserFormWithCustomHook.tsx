@@ -9,7 +9,7 @@ const UserFormWithCustomHook: FC = () => {
 
   const styleColor = { backgroundColor: "#7c9ef2" };
 
-  const updateUser = (): void => {
+  const onClickHandler = (): void => {
     if (refFormNameInput.current && refFormEmailInput.current) {
       //call function in useUserHook
       updateUserHook(
@@ -22,6 +22,7 @@ const UserFormWithCustomHook: FC = () => {
   return (
     <div className="UserFormWithCustomHook" style={styleColor}>
       <h2>Using Custom Hook from react</h2>
+      <p>You can use this to make the view cleaner (without a dispatch in view file).</p>
       <div id="form-container-hook">
         <div id="user-form-hook">
           <label>name:</label>
@@ -31,7 +32,7 @@ const UserFormWithCustomHook: FC = () => {
           <label>email:</label>
           <input ref={refFormEmailInput} id="form-name-email-hook"></input>
         </div>
-        <button onClick={() => updateUser()}>Update user</button>
+        <button onClick={() => onClickHandler()}>Update user</button>
       </div>
       <div>{` User name: ${name} Email: ${email}`}</div>
     </div>

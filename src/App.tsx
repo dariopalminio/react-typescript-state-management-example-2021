@@ -4,26 +4,27 @@ import UserFormWithAtom from "./components/UserFormWithAtom";
 import UserFormWithCustomHook from "./components/UserFormWithCustomHook";
 import UserFormWithUseState from "./components/UserFormWithUseState";
 import UserFormWithContext from "./components/UserFormWithContext";
-import StaticContext from "./states/context/StaticContext";
+import GlobalContextProvider from "./states/context/GlobalContext";
 import "./App.css";
 
 const App: FC = () => {
   return (
-    <StaticContext.Provider value={{initialName: 'Daro', initialEmail: 'daro@gmail.com'}}>
-    <div className="App">
-      <h1>State management examples...</h1>
-
-      <UserFormWithUseState />
-
-      <UserFormWithReducer />
-
-      <UserFormWithAtom />
-
-      <UserFormWithCustomHook />
-
-      <UserFormWithContext/>
-    </div>
-    </StaticContext.Provider>
+    <GlobalContextProvider>
+      <div className="App">
+        <h1>State management examples...</h1>
+        <p>
+          Below is a set of examples of how to handle states in
+          react/typescript. The examples read a name and email from a 'state' and
+          update them with the new data from the input box when you click the update
+          button.
+        </p>
+        <UserFormWithUseState />
+        <UserFormWithReducer />
+        <UserFormWithCustomHook />
+        <UserFormWithAtom />
+        <UserFormWithContext />
+      </div>
+    </GlobalContextProvider>
   );
 };
 
