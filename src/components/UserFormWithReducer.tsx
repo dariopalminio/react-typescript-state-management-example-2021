@@ -1,12 +1,12 @@
 import React, { FC, useReducer } from "react";
 import {
-  userReducer,
+  UserReducer,
   userInitialState,
   ActionType,
-} from "../states/userReducer";
+} from "../states/UserReducer";
 
 const UserFormWithReducer: FC = () => {
-  const [userState, dispatch] = useReducer(userReducer, userInitialState);
+  const [userState, dispatch] = useReducer(UserReducer, userInitialState);
 
   let refFormNameInput = React.createRef<HTMLInputElement>();
   let refFormEmailInput = React.createRef<HTMLInputElement>();

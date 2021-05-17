@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { useAtom } from "jotai";
-import { userAtom } from "../states/userAtom";
+import { UserAtom } from "../states/UserAtom";
 
 const UserFormWithAtom: FC = () => {
   //Then access the atom’s value and updater function inside of the component
-  const [user, setPassword] = useAtom(userAtom);
+  const [user, setUser] = useAtom(UserAtom);
 
   let refFormNameInput = React.createRef<HTMLInputElement>();
   let refFormEmailInput = React.createRef<HTMLInputElement>();
@@ -18,7 +18,7 @@ const UserFormWithAtom: FC = () => {
         email: refFormEmailInput.current.value,
       };
       //dispatch({ type: ActionType.UPDATE_USER, payload: newUser });
-      setPassword(newUser);
+      setUser(newUser);
     }
   };
 

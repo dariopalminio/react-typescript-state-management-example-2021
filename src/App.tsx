@@ -4,7 +4,7 @@ import UserFormWithAtom from "./components/UserFormWithAtom";
 import UserFormWithCustomHook from "./components/UserFormWithCustomHook";
 import UserFormWithUseState from "./components/UserFormWithUseState";
 import UserFormWithContext from "./components/UserFormWithContext";
-import GlobalContextProvider from "./states/context/GlobalContext";
+import GlobalContextProvider from "./states/context/GlobalContextProvider";
 import "./App.css";
 
 const App: FC = () => {

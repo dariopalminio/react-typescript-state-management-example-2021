@@ -28,7 +28,7 @@ export enum ActionType {
  * @param action 
  * @returns newState
  */
-export const userReducer = (
+export const UserReducer = (
   state: UserType = userInitialState,
   action: { type: ActionType; payload: any }
 ): UserType => {

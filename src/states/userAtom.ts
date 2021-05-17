@@ -22,5 +22,5 @@ export const userInitialState: UserTypeAtom = {
  * initial value, be it a primitive type like a number, string, or more
  * complex structures like arrays and objects.
  */
-export const userAtom = atom(userInitialState);
+export const UserAtom = atom(userInitialState);
 
