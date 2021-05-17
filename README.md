@@ -1,7 +1,20 @@
+This project is a set of State management examples. This is a set of examples of how to handle states in React and TypeScript. The examples read a name and email from a 'state' and update them with the new data from the input box when you click the update button.
+The implementations of the following State Management strategies are shown:
+- Using useState.
+- Using useReducer.
+- Using Custom Hook (with useReducer) from react.
+- Using useAtom from jotai library.
+- Using useContext.
+
+# Requirements
+
+NPM in NodeJS.
 
 # Creating from zero
 
-npx create-react-app react-typescript-state-management-example --template typescript
+To create the project from zero, the following commands were used:
+
+npx create-react-app react-typescript-state-management-example-2021 --template typescript
 
 npm install --save-dev jotai
 
