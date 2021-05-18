@@ -15,7 +15,7 @@ test("Test GlobalContextProvider and GlobalContext with a Stub component that co
     expect(screen.getByText(new RegExp(StateDefaultValues.name, "i"))).toBeInTheDocument();
   });
 
-  //Stub component that consume a user.name default value
+  //Stub component that consumes a user.name default value
   const ConsumerStub: FC = () => {
     const { user } = React.useContext(
       GlobalContext
