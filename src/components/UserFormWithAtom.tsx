@@ -29,8 +29,8 @@ const UserFormWithAtom: FC = () => {
         Jotai is util for its minimalistic but flexible way to manage a simple
         global state. The selling point of atoms is that you can access the same
         atom from multiple components. If a component updates the atom, then all
-        the components that read this atom are updated. This is the global state
-        management!
+        the components that read this atom are updated. Atoms can be used for
+        high-frequency updates.
       </p>
       <div id="form-container-atom">
         <div id="user-form-atom">

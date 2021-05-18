@@ -43,6 +43,8 @@ const UserFormWithReducer: FC = () => {
           <label>name:</label>
           <input
             className="input-test"
+            data-testid="TestId-form-name-input-reducer"
+            title="title-test"
             ref={refFormNameInput}
             id="form-name-input-reducer"
             aria-label="form-name-input-reducer"
@@ -50,7 +52,8 @@ const UserFormWithReducer: FC = () => {
         </div>
         <div>
           <label>email:</label>
-          <input ref={refFormEmailInput} id="form-name-email"></input>
+          <input ref={refFormEmailInput} 
+          id="form-name-email"></input>
         </div>
         <button onClick={() => onClickHandler()}>Update user</button>
       </div>
